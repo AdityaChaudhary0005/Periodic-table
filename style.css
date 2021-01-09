@@ -10,6 +10,14 @@ body{
     display:flex;
     align-items: center;
     align-content: center;
+    animation: move;  
+    animation-duration: 1s;
+    
+}
+
+@keyframes move{
+    from { margin-left: 0%}
+    to {margin-left: 36%}
 }
 
 .heading > img{
@@ -38,7 +46,10 @@ h3 > span {
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto ;
     background-color: #fcf8e8; 
     position: relative;
+    animation: con;
 }
+
+
 
 .null{
     visibility: hidden;
@@ -58,6 +69,15 @@ h3 > span {
     width: 5.3vw;
     height:5.8vw;
     overflow: hidden; 
+    animation: big ease-in-out;
+    animation-duration: 0.8s;
+    box-shadow: 0 0 8px 2px ;   
+}
+.grid:hover{
+    box-shadow: 0;
+}
+@keyframes big{
+  
 }
 
 .small{
