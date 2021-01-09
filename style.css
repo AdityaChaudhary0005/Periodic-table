@@ -2,14 +2,42 @@
 body{
     font-family: "Barlow Semi Condensed"; 
     margin-top: 0px;
+    background-color: #fcf8e8;
+}
+
+.heading{
+    margin-left: 36%;
+    display:flex;
+    align-items: center;
+    align-content: center;
+}
+
+.heading > img{
+    max-width: 5vw;
+}
+
+h2{
+    color: #1c2b2d;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3vw;
+}
+
+h3{
+    color:#1c2b2d;
+    font-size: 2.5vw;
+    float: right;
+}
+
+h3 > span {
+    color: red;
 }
 .container{
     margin-top: 40px;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto ;
-    background-color: #ffffff; 
+    background-color: #fcf8e8; 
     position: relative;
-
 }
 
 .null{
