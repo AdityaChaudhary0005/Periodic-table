@@ -2,9 +2,35 @@
 <head>
     <title> Periodic Table</title>
     <link href="style.css" rel="stylesheet">
+    
+   
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
+    
 </head>
 
+
 <body>
+
+    <div class= "pop-up" id="modal">
+        <button id="close" type="button" onclick="closeModal()"></button>
+        <img class="cover" id="cover-image" src="https://www.thoughtco.com/thmb/uG213JOh-86XEvkl1dn09tLrD6s=/2400x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/crabnebula-57e1baaa3df78c9cce3394a6.jpg">
+        <h4 class="elmnt-name" id="name">Element name:</h1>
+        
+        <p id="z">Atomic Number (Z):</p>
+        <p id="a">Atomic Mass (A):</p> 
+        <p id ="appearance">Appearance</p> 
+        <p id="density">Density</p>     
+        <p id="mp">Melting Point</p>
+        <p id="bp">Boiling Point</p>
+        <p id="category">Category</p>
+        <p id="ec">Electronic Configuration:</p>
+        <p id="ea">Electron Affinity:</p> 
+        <p id="summary">Summary:</p>  
+
+       
+            
+    </div>
 
     <div class="heading">
     <img src="equip1.svg" >
@@ -14,7 +40,7 @@
 
     <div class="container">
         <!-- HYDROGEN -->
-        <div class="grid">
+        <div class="grid" id="1">
             <div class="flex non-metal">
                 <p class="atomic-number">1</p>
                 <h1 class="Symbol">H</h1>
@@ -25,39 +51,24 @@
 
         <!--EMPTY GRID-->
         <div class="grid null"> </div>           
-        
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
-
         <div class="grid null"> </div>
 
         <!-- NOBLE -->
-        <div class="grid">
+        <div class="grid" id="2">
             <div class="flex noble">
                 <p class="atomic-number">2</p>
                 <h1 class="Symbol">He</h1>
@@ -67,7 +78,7 @@
         </div>
 
         <!-- ALKALI -->
-        <div class="grid">
+        <div class="grid" id="3">
             <div class="flex alkali">
                 <p class="atomic-number">3</p>
                 <h1 class="Symbol">Li</h1>
@@ -76,7 +87,7 @@
             </div>
         </div>
 
-        <div class="grid">
+        <div class="grid" id="4">
             <div class="flex alkaline-earth">
                 <p class="atomic-number">4</p>
                 <h1 class="Symbol">Be</h1>
@@ -106,7 +117,7 @@
         <div class="grid null"> </div>
 
         <!-- METALOID -->
-        <div class="grid">
+        <div class="grid" id =5>
             <div class="flex mettaloid">
                 <p class="atomic-number">5</p>
                 <h1 class="Symbol">B</h1>
