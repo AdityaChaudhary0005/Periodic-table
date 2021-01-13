@@ -9,7 +9,7 @@ body{
 
 
 #close{
-    background: url("https://www.flaticon.com/svg/vstatic/svg/753/753345.svg?token=exp=1610547307~hmac=970313d94b57f7fb26d4a86393c5dd4c") ;
+    background: url("./cross.svg") ;
     background-repeat: no-repeat;
     border:none;
     cursor: pointer;
