@@ -3,7 +3,69 @@ body{
     font-family: "Barlow Semi Condensed"; 
     margin-top: 0px;
     background-color: #fcf8e8;
+    overflow: scroll;
 }
+
+
+
+#close{
+    background: url("https://www.flaticon.com/svg/vstatic/svg/753/753345.svg?token=exp=1610547307~hmac=970313d94b57f7fb26d4a86393c5dd4c") ;
+    background-repeat: no-repeat;
+    border:none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color:transparent;
+    border-radius: 50%;
+    margin: -10px;
+}
+#close:hover{
+    box-shadow: 0 0 10px 1px;
+}
+
+
+
+.pop-up{
+    
+    color: white;
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 2px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color:#222831;
+    width: 96%;
+    top: 2%;
+    left:2%;
+    height:auto;
+    position: fixed; 
+    z-index: 1;   
+    animation: pop;
+    animation-duration: 1s;
+    visibility: hidden;
+    
+
+}
+@keyframes pop{
+    from{ top: -40%}
+    to{top: 2%}
+}
+.pop-up > h4{  
+    margin-left: 20px ;
+    font-size: 26px;
+}
+
+.pop-up > p{
+    margin-left: 20px;
+    margin-top: 1px;
+    margin-bottom: 2px;
+}
+
+.pop-up > .cover{
+    float:right;
+    max-height: 30vw;
+    max-width:  40vw;
+  
+}
+
 
 .heading{
     margin-left: 36%;
@@ -75,6 +137,7 @@ h3 > span {
 }
 .grid:hover{
     box-shadow: 0;
+    cursor:pointer;
 }
 @keyframes big{
   
