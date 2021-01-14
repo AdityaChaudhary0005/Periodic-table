@@ -2,8 +2,6 @@
 <head>
     <title> Periodic Table</title>
     <link href="style.css" rel="stylesheet">
-    
-   
     <script src="jquery.min.js"></script>
     <script src="script.js"></script>
     
@@ -12,11 +10,12 @@
 
 <body>
 
+    <!--This is responsible for creating the Modal (pop-up) it is hidden by default-->
+
     <div class= "pop-up" id="modal">
         <button id="close" type="button" onclick="closeModal()"></button>
         <img class="cover" id="cover-image" src="https://www.thoughtco.com/thmb/uG213JOh-86XEvkl1dn09tLrD6s=/2400x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/crabnebula-57e1baaa3df78c9cce3394a6.jpg">
         <h4 class="elmnt-name" id="name">Element name:</h1>
-        
         <p id="z">Atomic Number (Z):</p>
         <p id="a">Atomic Mass (A):</p> 
         <p id ="appearance">Appearance</p> 
@@ -29,9 +28,7 @@
         <p id="ea">Electron Affinity:</p> 
         <p id="db">Discovered By: </p>
         <p id="summary">Summary:</p>  
-        <br>
-       
-            
+        <br>      
     </div>
 
     <div class="heading">
@@ -40,6 +37,7 @@
     <img src = "equip2.svg">
     </div>  
 
+    <!-- This is table legend. Much like geography map legends-->
     <div class="legend">
         <div class="legend-object alkali">&nbsp; </div>
         <p>Alkali Meatals</p>
@@ -72,6 +70,8 @@
 
     </div>
 
+
+    <!-- I will sue you if you will make any change in it. These codes are responsible for creating the table-->
     <div class="container">
         <!-- HYDROGEN -->
         <div class="grid" id="1">
@@ -83,8 +83,8 @@
             </div>
         </div>
 
-        <!--EMPTY GRID-->
-        <div class="grid null"> </div>           
+        <!--EMPTY GRID (it is empy grid and is hidden from CSS)-->
+        <div class="grid null"> </div>            
         <div class="grid null"> </div>
         <div class="grid null"> </div>
         <div class="grid null"> </div>
@@ -1284,7 +1284,7 @@
     </div>
 
     
-   
+   <!--Please don't change my name here..I have work hard...or just change it who cares.. it is just a comment lol-->
 
     <h3>Made by Aditya with <span>&hearts; </span></h3>
 </body>
