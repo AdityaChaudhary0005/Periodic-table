@@ -1,25 +1,28 @@
-function closeModal(){
+// This method is resoponsible for hidding/unhidding the modal
+
+function closeModal(){ 
   document.getElementById("modal").style.visibility ="hidden";
- // document.getElementsByClassName("pop-up")[0].style.top = "-40%";
+ // document.getElementsByClassName("pop-up")[0].style.top = "-40%"; this is deactivated code
 }
 
 var atomic_number = 0;
 
+//Jquery for ...umm...can't explain it's complex
 $(document).ready(function(){  
     $("div.flex").click(function(){  
             $(this).each(function ( index ){ 
                 var z = $(this).text();
-                var arr= z.split("\n");
+                var arr= z.split("\n"); //eww..complex logic...don't go into it
                 atomic_number = arr[1].trim();
-               // console.log(atomic_number);   
+                
                 var element_details = data.elements[atomic_number-1];
-                //console.log(element_details); 
-               // console.log(element_details.name);
+                
                if(element_details.name != undefined)
                 {
+
+                /* THESE CODES DO SOMETHING..UMM..LIKE FETCHING RESULTS ON CLICK..DON'T MAKE ANY CHANGE*/
                 console.log(element_details.spectral_img);
                 document.getElementById("modal").style.visibility="visible";
-                
 
                  
                 document.getElementById("cover-image").src = element_details.image; 
@@ -44,9 +47,8 @@ $(document).ready(function(){
   
   });
 
- /* function gridClick(){
-    console.log(document.getElementById("Lithium").innerHTML);
-  }*/
+/* This is kind of JSON..can't explain..it's chemistry..the code is copy pasta but..yeah..i had to extend the code by
+    adding links to images..it was hard since..umm..i had to find link to images for 118 whoopping elements */
 
 const data = {
   "elements": [
