@@ -1,5 +1,6 @@
 # Periodic-table
 Periodic table app
+![Preview](https://github.com/AdityaChaudhary0005/Periodic-table/blob/master/preview.jpg?raw=true)
 
 This is a simple web app that displays the modern periodic table
 
