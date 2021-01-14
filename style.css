@@ -13,8 +13,8 @@ body{
     background-repeat: no-repeat;
     border:none;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color:transparent;
     border-radius: 50%;
     margin: -10px;
@@ -27,21 +27,20 @@ body{
 
 .pop-up{
     
-    color: white;
+    color: #000000;
     box-shadow: 0 0 10px 2px black;
     border-radius: 2px;
     border: 2px solid rgb(0, 0, 0);
-    background-color:#222831;
+    background-color:#f5f4f4;
     width: 96%;
     top: 2%;
     left:2%;
     height:auto;
     position: fixed; 
-    z-index: 1;   
+    z-index: 2;   
     animation: pop;
     animation-duration: 1s;
-    visibility: hidden;
-    
+    visibility: hidden; 
 
 }
 @keyframes pop{
@@ -55,8 +54,9 @@ body{
 
 .pop-up > p{
     margin-left: 20px;
-    margin-top: 1px;
+    margin-top: 3px;
     margin-bottom: 2px;
+    font-size: 23px;
 }
 
 .pop-up > .cover{
@@ -64,6 +64,13 @@ body{
     max-height: 30vw;
     max-width:  40vw;
   
+}
+
+@media (min-width: 375px) {
+    .pop-up{
+        bottom: 2% !important;
+    }
+    
 }
 
 
@@ -133,7 +140,7 @@ h3 > span {
     overflow: hidden; 
     animation: big ease-in-out;
     animation-duration: 0.8s;
-    box-shadow: 0 0 8px 2px ;   
+    box-shadow: 0 0 0.8vw 0.15vw black ;   
 }
 .grid:hover{
     box-shadow: 0;
@@ -315,6 +322,29 @@ h3 > span {
 }
 .unknown:hover{
     background-color: #a2a3a2;
+}
+
+
+.legend{
+    display: grid;
+   margin-top: 10vw;
+   left: 18%;
+   position: absolute;
+   z-index: 1;
+   grid-template-columns: auto auto auto auto auto auto auto auto ;
+}
+
+.legend > p{
+    margin: 0px;
+    margin-top: 1vw;
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+.legend-object{
+    width: 1.4vw;
+    height: 1.4vw;
+    margin-top: 1vw;
 }
 
 
