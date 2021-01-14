@@ -1,3 +1,53 @@
+function closeModal(){
+  document.getElementById("modal").style.visibility ="hidden";
+ // document.getElementsByClassName("pop-up")[0].style.top = "-40%";
+}
+
+var atomic_number = 0;
+
+$(document).ready(function(){  
+    $("div.flex").click(function(){  
+            $(this).each(function ( index ){ 
+                var z = $(this).text();
+                var arr= z.split("\n");
+                atomic_number = arr[1].trim();
+               // console.log(atomic_number);   
+                var element_details = data.elements[atomic_number-1];
+                //console.log(element_details); 
+               // console.log(element_details.name);
+               if(element_details.name != undefined)
+                {
+                console.log(element_details.spectral_img);
+                document.getElementById("modal").style.visibility="visible";
+                
+
+                 
+                document.getElementById("cover-image").src = element_details.image; 
+                document.getElementById("db").innerHTML = "<b>Discovered By:</b> " + element_details.discovered_by;
+                document.getElementById("state").innerHTML = "<b>State:</b> " + element_details.phase;
+
+                document.getElementById("name").innerHTML = "Element Name : " + element_details.name +" ("+ element_details.symbol+")";
+                document.getElementById("z").innerHTML = "<b>Atomic Number (Z):</b> " + element_details.number;
+                document.getElementById("a").innerHTML = "<b>Atomic Mass (A):</b> " + element_details.atomic_mass;
+                document.getElementById("appearance").innerHTML = "<b>Appearance: </b>" + element_details.appearance;
+                document.getElementById("density").innerHTML = "<b>Density: </b>" + element_details.density;
+                document.getElementById("mp").innerHTML = "<b>Melting Point:</b> " + element_details.melt;
+                document.getElementById("bp").innerHTML = "<b>Boiling Point:</b> " + element_details.boil;
+                document.getElementById("summary").innerHTML = "<b>Summary: </b>" + element_details.summary;
+                document.getElementById("category").innerHTML = "<b>Category: </b>" + element_details.category;
+                document.getElementById("ec").innerHTML = "<b>Electronic Configuration: </b>" + element_details.electron_configuration;
+                document.getElementById("ea").innerHTML = "<b>Electron Affinity: </b>" + element_details.electron_affinity;
+                }
+            } );
+    });
+
+  
+  });
+
+ /* function gridClick(){
+    console.log(document.getElementById("Lithium").innerHTML);
+  }*/
+
 const data = {
   "elements": [
       {
@@ -791,7 +841,7 @@ const data = {
       },
       {
           "name": "Potassium",
-          "image": "https://www.thoughtco.com/thmb/IOomqQVetLqZdtjeYr1kbOhpCqg=/1612x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/81992232-58b5e3b45f9b586046fdf21a.jpg",
+          "image": "https://cdn.britannica.com/77/131177-050-79292189/fragments-Potassium-metal.jpg",
           "appearance": "silvery gray",
           "atomic_mass": 39.09831,
           "boil": 1032,
@@ -1784,6 +1834,7 @@ const data = {
       },
       {
           "name": "Rubidium",
+          "image": "https://www.thoughtco.com/thmb/7X0Bfj7Qm8h39c_WRZJLG3g6S-Q=/2150x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/rubidium-58b5e3313df78cdcd8ed1ab0.jpg",
           "appearance": "grey white",
           "atomic_mass": 85.46783,
           "boil": 961,
@@ -1830,6 +1881,7 @@ const data = {
       },
       {
           "name": "Strontium",
+          "image": "https://www.thoughtco.com/thmb/UOQ8TcQOH_PmK3BLLrDDz35EmgY=/1534x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Strontium_destilled_crystals-58b5e3275f9b586046fc39db.jpg",
           "appearance": null,
           "atomic_mass": 87.621,
           "boil": 1650,
@@ -1877,6 +1929,7 @@ const data = {
       },
       {
           "name": "Yttrium",
+          "image": "https://www.thoughtco.com/thmb/z94TOS0-7yrpEMpN7CtaxtPLh0E=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/yttrium-dendrites-cube-58b5e31c3df78cdcd8ecd911.jpg",
           "appearance": "silvery white",
           "atomic_mass": 88.905842,
           "boil": 3203,
@@ -1925,6 +1978,7 @@ const data = {
       },
       {
           "name": "Zirconium",
+          "image": "https://www.thoughtco.com/thmb/Xtnqb63E8TsISOssB4QQrdfRS7E=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/zicronium-crystals-cube-58b5e3185f9b586046fc0c84.jpg",
           "appearance": "silvery white",
           "atomic_mass": 91.2242,
           "boil": 4650,
@@ -1967,6 +2021,7 @@ const data = {
       },
       {
           "name": "Niobium",
+          "image":"https://www.thoughtco.com/thmb/I5CpmCaLv-fmRgIY3BKc1buKXkU=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/niobium-crystals-cube-58b5e3155f9b586046fc01d0.jpg",
           "appearance": "gray metallic, bluish when oxidized",
           "atomic_mass": 92.906372,
           "boil": 5017,
@@ -2010,6 +2065,7 @@ const data = {
       },
       {
           "name": "Molybdenum",
+          "image": "https://www.thoughtco.com/thmb/dBXsU2Sxpi-ZTCAiHr28HHLkisk=/1512x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/molybdenum-crystal-cube-58b5e30f5f9b586046fbf20d.jpg",
           "appearance": "gray metallic",
           "atomic_mass": 95.951,
           "boil": 4912,
@@ -2076,6 +2132,8 @@ const data = {
       },
       {
           "name": "Technetium",
+          "image": "data:image/jpeg;base64,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",
+
           "appearance": "shiny gray metal",
           "atomic_mass": 98,
           "boil": 4538,
@@ -2115,6 +2173,7 @@ const data = {
       },
       {
           "name": "Ruthenium",
+          "image": "https://www.thoughtco.com/thmb/dFMmHlQwE3eQBpoPt29VAZM1s58=/689x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Ruthenium_crystals-58b5e3063df78cdcd8ec9650.jpg",
           "appearance": "silvery white metallic",
           "atomic_mass": 101.072,
           "boil": 4423,
@@ -2154,6 +2213,7 @@ const data = {
       },
       {
           "name": "Rhodium",
+          "image": "https://www.thoughtco.com/thmb/F8xbdiWNGPJc5Zs-t5rFtIBGy-I=/1545x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Rhodium_powder_pressed_melted-58b5e3005f9b586046fbc47a.jpg",
           "appearance": "silvery white metallic",
           "atomic_mass": 102.905502,
           "boil": 3968,
@@ -2193,6 +2253,7 @@ const data = {
       },
       {
           "name": "Palladium",
+          "image": "https://m.economictimes.com/thumb/msid-73316071,width-1200,height-900,resizemode-4,imgsize-357105/palladium-shutter.jpg",
           "appearance": "silvery white",
           "atomic_mass": 106.421,
           "boil": 3236,
@@ -2231,6 +2292,7 @@ const data = {
       },
       {
           "name": "Silver",
+          "image": "https://www.thoughtco.com/thmb/QOk2kmPCNDVbphTvN4Gxe8IwXuw=/1364x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/raw-silver-crystal-98955646-58b5e2f63df78cdcd8ec64d0.jpg",
           "appearance": "lustrous white metal",
           "atomic_mass": 107.86822,
           "boil": 2435,
@@ -2270,6 +2332,7 @@ const data = {
       },
       {
           "name": "Cadmium",
+          "image": "https://www.thoughtco.com/thmb/2_ppPyMwbfztIVppM8_9nYQX3MM=/1530x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Cadmium-crystal_bar-58b5e2ea5f9b586046fb7f9a.jpg",
           "appearance": "silvery bluish-gray metallic",
           "atomic_mass": 112.4144,
           "boil": 1040,
@@ -2309,6 +2372,7 @@ const data = {
       },
       {
           "name": "Indium",
+          "image": "https://www.thoughtco.com/thmb/GjOWhigaOGAwNVh3I0Fb01Zm8uA=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Indium-58b5c2195f9b586046c8f349.jpg",
           "appearance": "silvery lustrous gray",
           "atomic_mass": 114.8181,
           "boil": 2345,
@@ -2349,6 +2413,7 @@ const data = {
       },
       {
           "name": "Tin",
+          "image": "https://www.thoughtco.com/thmb/TVAv0HVELrn8_zzApmxd7-hJqAs=/1526x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Sn-Alpha-Beta-58b5e2db5f9b586046fb519f.jpg",
           "appearance": "silvery-white (beta, β) or gray (alpha, α)",
           "atomic_mass": 118.7107,
           "boil": 2875,
@@ -2390,6 +2455,7 @@ const data = {
       },
       {
           "name": "Antimony",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Antimony-4.jpg",
           "appearance": "silvery lustrous gray",
           "atomic_mass": 121.7601,
           "boil": 1908,
@@ -2432,6 +2498,7 @@ const data = {
       },
       {
           "name": "Tellurium",
+          "image": "https://www.thoughtco.com/thmb/cA-MMYH9tBHDRSZSIPEX0xg52bg=/1170x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Tellurium2-58b5e2d65f9b586046fb416a.jpg",
           "appearance": null,
           "atomic_mass": 127.603,
           "boil": 1261,
@@ -2475,6 +2542,7 @@ const data = {
       },
       {
           "name": "Iodine",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Antimony-4.jpg",
           "appearance": "lustrous metallic gray, violet as a gas",
           "atomic_mass": 126.904473,
           "boil": 457.4,
@@ -2514,6 +2582,7 @@ const data = {
       },
       {
           "name": "Xenon",
+          "image": "https://www.thoughtco.com/thmb/1f3YX-2LtRnO5Z3zJrXqV2VuXaY=/1856x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/liquefied_xenon-58b5e2c95f9b586046fb1ab0.JPG",
           "appearance": "colorless gas, exhibiting a blue glow when placed in a high voltage electric field",
           "atomic_mass": 131.2936,
           "boil": 165.051,
@@ -2552,7 +2621,8 @@ const data = {
           "cpk-hex": "429eb0"
       },
       {
-          "name": "Cesium",
+          "name": "Caesium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Cesium.jpg",
           "appearance": "silvery gold",
           "atomic_mass": 132.905451966,
           "boil": 944,
@@ -2593,6 +2663,7 @@ const data = {
       },
       {
           "name": "Barium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Barium_unter_Argon_Schutzgas_Atmosphäre.jpg",
           "appearance": null,
           "atomic_mass": 137.3277,
           "boil": 2118,
@@ -2633,6 +2704,7 @@ const data = {
       },
       {
           "name": "Lanthanum",
+          "image": "data:image/jpeg;base64,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",
           "appearance": "silvery white",
           "atomic_mass": 138.905477,
           "boil": 3737,
@@ -2675,6 +2747,7 @@ const data = {
       },
       {
           "name": "Cerium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg",
           "appearance": "silvery white",
           "atomic_mass": 140.1161,
           "boil": 3716,
@@ -2718,6 +2791,7 @@ const data = {
       },
       {
           "name": "Praseodymium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Praseodymium.jpg",
           "appearance": "grayish white",
           "atomic_mass": 140.907662,
           "boil": 3403,
@@ -2760,6 +2834,7 @@ const data = {
       },
       {
           "name": "Neodymium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Neodymium2.jpg",
           "appearance": "silvery white",
           "atomic_mass": 144.2423,
           "boil": 3347,
@@ -2801,6 +2876,7 @@ const data = {
       },
       {
           "name": "Promethium",
+          "image": "https://www.raremetalbuy.com/wp-content/uploads/2016/07/Promethium.jpg",
           "appearance": "metallic",
           "atomic_mass": 145,
           "boil": 3273,
@@ -2842,6 +2918,7 @@ const data = {
       },
       {
           "name": "Samarium",
+          "image" : "https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg",
           "appearance": "silvery white",
           "atomic_mass": 150.362,
           "boil": 2173,
@@ -2883,6 +2960,7 @@ const data = {
       },
       {
           "name": "Europium",
+          "image":"https://www.thoughtco.com/thmb/nsa5eXeG9G-zY-9Llk95lgW8kPQ=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/europium-58b5c21e5f9b586046c8f373.jpg",
           "appearance": null,
           "atomic_mass": 151.9641,
           "boil": 1802,
@@ -2924,6 +3002,7 @@ const data = {
       },
       {
           "name": "Gadolinium",
+          "image" : "https://upload.wikimedia.org/wikipedia/commons/d/d1/Gadolinium-4.jpg",
           "appearance": "silvery white",
           "atomic_mass": 157.253,
           "boil": 3273,
@@ -2965,6 +3044,7 @@ const data = {
       },
       {
           "name": "Terbium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg",
           "appearance": "silvery white",
           "atomic_mass": 158.925352,
           "boil": 3396,
@@ -3006,6 +3086,7 @@ const data = {
       },
       {
           "name": "Dysprosium",
+          "image" : "https://upload.wikimedia.org/wikipedia/commons/a/a8/Dy_chips.jpg",
           "appearance": "silvery white",
           "atomic_mass": 162.5001,
           "boil": 2840,
@@ -3047,6 +3128,7 @@ const data = {
       },
       {
           "name": "Holmium",
+          "image" : "https://www.assignmentpoint.com/wp-content/uploads/2017/10/Holmium0.jpg",
           "appearance": "silvery white",
           "atomic_mass": 164.930332,
           "boil": 2873,
@@ -3088,6 +3170,7 @@ const data = {
       },
       {
           "name": "Erbium",
+          "image": "https://www.chemistrylearner.com/wp-content/uploads/2018/05/Erbium-Metal.jpg",
           "appearance": "silvery white",
           "atomic_mass": 167.2593,
           "boil": 3141,
@@ -3129,6 +3212,7 @@ const data = {
       },
       {
           "name": "Thulium",
+          "image" : "https://www.assignmentpoint.com/wp-content/uploads/2017/10/Thulium0.jpg",
           "appearance": "silvery gray",
           "atomic_mass": 168.934222,
           "boil": 2223,
@@ -3170,7 +3254,8 @@ const data = {
       },
       {
           "name": "Ytterbium",
-          "appearance": null,
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg",
+          "appearance": "Bright silvery luster when pure",
           "atomic_mass": 173.0451,
           "boil": 1469,
           "category": "lanthanide",
@@ -3211,6 +3296,7 @@ const data = {
       },
       {
           "name": "Lutetium",
+          "image": "https://www.thoughtco.com/thmb/2LYpPegdhYXpNVzRsrz72mFqEe0=/1373x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Lutetium_sublimed_dendritic_and_1cm3_cube-58b5e2b15f9b586046fad099.jpg",
           "appearance": "silvery white",
           "atomic_mass": 174.96681,
           "boil": 3675,
@@ -3253,6 +3339,7 @@ const data = {
       },
       {
           "name": "Hafnium",
+          "image": "https://lh3.googleusercontent.com/proxy/wr2G66NRsMdpsnrFhQDeecDtHfTtx75uxrZrv-ZprApYcxoXpzHOPjnnhPw8gN_rzIKvmNUe3RlXRqMEo5baRwIGW5ieJjo8BUfBQsizLsDpI1uVkK22Eg",
           "appearance": "steel gray",
           "atomic_mass": 178.492,
           "boil": 4876,
@@ -3294,6 +3381,7 @@ const data = {
       },
       {
           "name": "Tantalum",
+          "image": "https://www.thoughtco.com/thmb/GfSTZuFzJSq4ur6weeYFkHpOE9w=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tantalum-58b5e2a75f9b586046fab4d5.jpg",
           "appearance": "gray blue",
           "atomic_mass": 180.947882,
           "boil": 5731,
@@ -3333,6 +3421,7 @@ const data = {
       },
       {
           "name": "Tungsten",
+          "image": "https://www.thoughtco.com/thmb/qPV56GswSwQGEEwowdOVZM2f4uo=/1593x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/tungsten-or-wolfram-58b5e2a25f9b586046faa2aa.jpg",
           "appearance": "grayish white, lustrous",
           "atomic_mass": 183.841,
           "boil": 6203,
@@ -3372,6 +3461,7 @@ const data = {
       },
       {
           "name": "Rhenium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Rhenium_single_crystal_bar_and_1cm3_cube.jpg",
           "appearance": "silvery-grayish",
           "atomic_mass": 186.2071,
           "boil": 5869,
@@ -3413,6 +3503,7 @@ const data = {
       },
       {
           "name": "Osmium",
+          "image": "https://www.thoughtco.com/thmb/OnxlWdhHod5VUrfz2S1yyowaagg=/653x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/osmium-crystals-58b5e2995f9b586046fa8646.jpg",
           "appearance": "silvery, blue cast",
           "atomic_mass": 190.233,
           "boil": 5285,
@@ -3452,6 +3543,7 @@ const data = {
       },
       {
           "name": "Iridium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg",
           "appearance": "silvery white",
           "atomic_mass": 192.2173,
           "boil": 4403,
@@ -3491,6 +3583,7 @@ const data = {
       },
       {
           "name": "Platinum",
+          "image": "https://www.thoughtco.com/thmb/X_vDQNEjVZfv7RGApVEoZvj2v6k=/800x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/platinum-crystals-58b5e2953df78cdcd8eb3f22.jpg",
           "appearance": "silvery white",
           "atomic_mass": 195.0849,
           "boil": 4098,
@@ -3530,6 +3623,7 @@ const data = {
       },
       {
           "name": "Gold",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Gold_nugget_%28Australia%29_4_%2816848647509%29.jpg/1200px-Gold_nugget_%28Australia%29_4_%2816848647509%29.jpg",
           "appearance": "metallic yellow",
           "atomic_mass": 196.9665695,
           "boil": 3243,
@@ -3569,6 +3663,7 @@ const data = {
       },
       {
           "name": "Mercury",
+          "image": "https://www.thoughtco.com/thmb/IGwYSJmwZOXLKJLAOlMPc_EWCcA=/2240x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/droplets-of-liquid-mercury-on-round-glass-tray-close-up-72002409-58b5e2825f9b586046fa3f36.jpg",
           "appearance": "silvery",
           "atomic_mass": 200.5923,
           "boil": 629.88,
@@ -3609,6 +3704,7 @@ const data = {
       },
       {
           "name": "Thallium",
+          "image": "https://www.thoughtco.com/thmb/TlCXdQd6BxNKfoceKT3Hhfl6ess=/1608x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Thallium_pieces_in_ampoule-58b5e2773df78cdcd8eae8f7.jpg",
           "appearance": "silvery white",
           "atomic_mass": 204.38,
           "boil": 1746,
@@ -3649,6 +3745,7 @@ const data = {
       },
       {
           "name": "Lead",
+          "image": "https://www.thoughtco.com/thmb/N11yzKt7eKP044E_uSqBf9tb6jU=/1280x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/lead-metal-58b5e2723df78cdcd8ead8e8.jpg",
           "appearance": "metallic gray",
           "atomic_mass": 207.21,
           "boil": 2022,
@@ -3691,6 +3788,7 @@ const data = {
       },
       {
           "name": "Bismuth",
+          "image": "https://www.thoughtco.com/thmb/V8m1OiS9NcB0GxOv18qgEKMn6Kg=/1476x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/really-and-pure-chemical-elements-here-shown-bismuth-bi-173234101-58b5e26e3df78cdcd8eacbac.jpg",
           "appearance": "lustrous silver",
           "atomic_mass": 208.980401,
           "boil": 1837,
@@ -3734,6 +3832,7 @@ const data = {
       },
       {
           "name": "Polonium",
+          "image":"https://upload.wikimedia.org/wikipedia/en/6/66/Polonium.jpg",
           "appearance": "silvery",
           "atomic_mass": 209,
           "boil": 1235,
@@ -3772,6 +3871,7 @@ const data = {
       },
       {
           "name": "Astatine",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": "unknown, probably metallic",
           "atomic_mass": 210,
           "boil": 610,
@@ -3810,6 +3910,7 @@ const data = {
       },
       {
           "name": "Radon",
+          "image": "https://i.pinimg.com/originals/47/c6/90/47c690ccd9b5fe19458ad4b9673f5ce1.jpg",
           "appearance": "colorless gas, occasionally glows green or red in discharge tubes",
           "atomic_mass": 222,
           "boil": 211.5,
@@ -3848,6 +3949,7 @@ const data = {
       },
       {
           "name": "Francium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 223,
           "boil": 950,
@@ -3887,6 +3989,7 @@ const data = {
       },
       {
           "name": "Radium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Radium226.jpg/220px-Radium226.jpg",
           "appearance": "silvery white metallic",
           "atomic_mass": 226,
           "boil": 2010,
@@ -3927,6 +4030,7 @@ const data = {
       },
       {
           "name": "Actinium",
+          "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Actinium_sample_%2831481701837%29.png/220px-Actinium_sample_%2831481701837%29.png",
           "appearance": null,
           "atomic_mass": 227,
           "boil": 3500,
@@ -3967,6 +4071,7 @@ const data = {
       },
       {
           "name": "Thorium",
+          "image": "https://primefeed.in/wp-content/uploads/2020/07/Thorium.jpg",
           "appearance": "silvery, often with black tarnish",
           "atomic_mass": 232.03774,
           "boil": 5061,
@@ -4009,6 +4114,7 @@ const data = {
       },
       {
           "name": "Protactinium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Uraninite-39029.jpg/170px-Uraninite-39029.jpg",
           "appearance": "bright, silvery metallic luster",
           "atomic_mass": 231.035882,
           "boil": 4300,
@@ -4048,6 +4154,7 @@ const data = {
       },
       {
           "name": "Uranium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/HEUraniumC.jpg/800px-HEUraniumC.jpg",
           "appearance": null,
           "atomic_mass": 238.028913,
           "boil": 4404,
@@ -4088,6 +4195,7 @@ const data = {
       },
       {
           "name": "Neptunium",
+          "image": "https://lh3.googleusercontent.com/proxy/EXWR1Nzz7kpCJkGRuRdMgKHVnH47oiDxM7nsSkoUyNvfW6GPU7uN7sSrsIMjaCyJklP4DlPLk0kyJ87x9V0VuDCcfUrFKoujCyAv8oqGus7MVD4qUR1DnP3c",
           "appearance": "silvery metallic",
           "atomic_mass": 237,
           "boil": 4447,
@@ -4127,6 +4235,7 @@ const data = {
       },
       {
           "name": "Plutonium",
+          "image" : "https://www.thoughtco.com/thmb/qutxsCt9Qx6w7iWjjBBSMuaFIwk=/400x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Plutonium-58b5e25d3df78cdcd8ea9a7c.jpg",
           "appearance": "silvery white, tarnishing to dark gray in air",
           "atomic_mass": 244,
           "boil": 3505,
@@ -4166,6 +4275,7 @@ const data = {
       },
       {
           "name": "Americium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Americium_button_hd.jpg",
           "appearance": "silvery white",
           "atomic_mass": 243,
           "boil": 2880,
@@ -4205,6 +4315,7 @@ const data = {
       },
       {
           "name": "Curium",
+          "image": "https://upload.wikimedia.org/wikipedia/en/6/69/Curium.jpg",
           "appearance": "silvery metallic, glows purple in the dark",
           "atomic_mass": 247,
           "boil": 3383,
@@ -4244,6 +4355,7 @@ const data = {
       },
       {
           "name": "Berkelium",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Berkelium_metal.jpg/220px-Berkelium_metal.jpg",
           "appearance": "silvery",
           "atomic_mass": 247,
           "boil": 2900,
@@ -4283,6 +4395,7 @@ const data = {
       },
       {
           "name": "Californium",
+          "image": "https://i.pinimg.com/originals/fd/3c/1f/fd3c1f0b906c2154afaa4a54d1b3e70a.jpg",
           "appearance": "silvery",
           "atomic_mass": 251,
           "boil": 1743,
@@ -4322,6 +4435,7 @@ const data = {
       },
       {
           "name": "Einsteinium",
+          "image": "https://chemicool.com/elements/images/300-einsteinium-glow.jpg",
           "appearance": "silver-colored",
           "atomic_mass": 252,
           "boil": 1269,
@@ -4361,6 +4475,7 @@ const data = {
       },
       {
           "name": "Fermium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 257,
           "boil": null,
@@ -4400,6 +4515,7 @@ const data = {
       },
       {
           "name": "Mendelevium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 258,
           "boil": null,
@@ -4439,6 +4555,7 @@ const data = {
       },
       {
           "name": "Nobelium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 259,
           "boil": null,
@@ -4478,6 +4595,7 @@ const data = {
       },
       {
           "name": "Lawrencium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 266,
           "boil": null,
@@ -4517,6 +4635,7 @@ const data = {
       },
       {
           "name": "Rutherfordium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 267,
           "boil": 5800,
@@ -4556,6 +4675,7 @@ const data = {
       },
       {
           "name": "Dubnium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 268,
           "boil": null,
@@ -4593,6 +4713,7 @@ const data = {
       },
       {
           "name": "Seaborgium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 269,
           "boil": null,
@@ -4630,6 +4751,7 @@ const data = {
       },
       {
           "name": "Bohrium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 270,
           "boil": null,
@@ -4667,6 +4789,7 @@ const data = {
       },
       {
           "name": "Hassium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 269,
           "boil": null,
@@ -4704,6 +4827,7 @@ const data = {
       },
       {
           "name": "Meitnerium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 278,
           "boil": null,
@@ -4741,6 +4865,7 @@ const data = {
       },
       {
           "name": "Darmstadtium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 281,
           "boil": null,
@@ -4778,6 +4903,7 @@ const data = {
       },
       {
           "name": "Roentgenium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 282,
           "boil": null,
@@ -4815,6 +4941,7 @@ const data = {
       },
       {
           "name": "Copernicium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 285,
           "boil": 3570,
@@ -4852,6 +4979,7 @@ const data = {
       },
       {
           "name": "Nihonium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 286,
           "boil": 1430,
@@ -4889,6 +5017,7 @@ const data = {
       },
       {
           "name": "Flerovium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 289,
           "boil": 420,
@@ -4926,6 +5055,7 @@ const data = {
       },
       {
           "name": "Moscovium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 289,
           "boil": 1400,
@@ -4963,6 +5093,7 @@ const data = {
       },
       {
           "name": "Livermorium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 293,
           "boil": 1085,
@@ -5000,6 +5131,7 @@ const data = {
       },
       {
           "name": "Tennessine",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 294,
           "boil": 883,
@@ -5037,6 +5169,7 @@ const data = {
       },
       {
           "name": "Oganesson",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 294,
           "boil": 350,
@@ -5074,6 +5207,7 @@ const data = {
       },
       {
           "name": "Ununennium",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyxKaSrkuGBLdRPlXzbCLrgAcBbcXh_x18Q&usqp=CAU",
           "appearance": null,
           "atomic_mass": 315,
           "boil": 630,
@@ -5113,46 +5247,3 @@ const data = {
   ]
 };
 
-function closeModal(){
-  document.getElementById("modal").style.visibility ="hidden";
-}
-
-var atomic_number = 0;
-
-$(document).ready(function(){  
-    $("div.flex").click(function(){  
-            $(this).each(function ( index ){ 
-                var z = $(this).text();
-                var arr= z.split("\n");
-                atomic_number = arr[1].trim();
-               // console.log(atomic_number);   
-                var element_details = data.elements[atomic_number-1];
-                //console.log(element_details); 
-               // console.log(element_details.name);
-               if(element_details.name != undefined)
-                {
-                  console.log(element_details.spectral_img);
-                document.getElementById("modal").style.visibility="visible";
-                 
-                document.getElementById("cover-image").src = element_details.image; 
-                document.getElementById("name").innerHTML = "Element Name : " + element_details.name;
-                document.getElementById("z").innerHTML = "Atomic Number (Z): " + element_details.number;
-                document.getElementById("a").innerHTML = "Atomic Mass (A): " + element_details.atomic_mass;
-                document.getElementById("appearance").innerHTML = "Appearance: " + element_details.appearance;
-                document.getElementById("density").innerHTML = "Density: " + element_details.density;
-                document.getElementById("mp").innerHTML = "Melting Point: " + element_details.melt;
-                document.getElementById("bp").innerHTML = "Boiling Point: " + element_details.boil;
-                document.getElementById("summary").innerHTML = "Summary: " + element_details.summary;
-                document.getElementById("category").innerHTML = "Category: " + element_details.category;
-                document.getElementById("ec").innerHTML = "Electronic Configuration: " + element_details.electron_configuration;
-                document.getElementById("ea").innerHTML = "Electron Affinity:" + element_details.electron_affinity;
-                }
-            } );
-    });
-
-  
-  });
-
- /* function gridClick(){
-    console.log(document.getElementById("Lithium").innerHTML);
-  }*/
