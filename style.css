@@ -7,8 +7,8 @@ body{
 }
 
 
-
-#close{
+/* No way bro..I can't explain you how i made the css..it was painful but fun..so read it by yourself..IDC..*/
+#close{ 
     background: url("./cross.svg") ;
     background-repeat: no-repeat;
     border:none;
